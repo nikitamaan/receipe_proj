@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block start%}
+
+
+    <h1>this is index page</h1>
+
+    <a href="/contact/">
+        Contact
+    </a>
+    <a href="/about/">
+        About
+    </a>
+    {{peoples}}
+    <table class=" container">
+        <tr>
+          <th>S.no.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>can vote</th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+          <td>{{forloop.counter}}
+          </td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}</td>
+          <td>
+            {% if people.can_vote %}
+            👍🏻
+            {% else %}
+            👎🏻
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+       
+      </table>
+      <p>
+        {% if cucumber in vegetables %}
+            Yes availabe
+        {% else %}     
+            Not availabe
+
+        {% endif%}     
+      </p>
+
+{% endblock %}
+
+      
+    
