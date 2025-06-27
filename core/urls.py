@@ -25,6 +25,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', home , name="home"),
     path('receipes/', receipes , name="receipes"),
+    path('delete-receipe/<id>/',delete_receipe,name = "delete-receipe"),
+    path('update-receipe/<id>/', update_receipe, name="update-receipe"),
     path('contact/',contact, name="contact"),
     path('about/', about , name="about"),
     path('success-page/', success_page, name="success_page"),

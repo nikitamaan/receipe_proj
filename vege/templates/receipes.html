@@ -22,14 +22,31 @@
         <button type="submit" class="btn btn-success">Add Receipe</button>
       </form>
 
+      <div class ="mt-5">
+        <div class = "mx-auto col-6">
+          <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Search Food</label>
+            <input name="search"  type="text" class="form-control">
 
-      <table class="table">
+            
+          </div>
+          <button type = "submit" class = "btn btn-primary">Search</button> 
+          </form>
+          
+          
+        </div>
+      </div>
+
+
+      <table class="table mt-5">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Receipe name</th>
             <th scope="col">Receipe Description</th>
             <th scope="col">Image</th>
+            <th scope="col">Actions</th> 
           </tr>
         </thead>
         <tbody>
@@ -44,6 +61,10 @@
               {% else %}
                   No Image
               {% endif %}
+            </td>
+            <td>
+              <a href="{% url 'delete-receipe' receipe.id %}" class="btn btn-danger btn-sm " style="margin-right: 10px;">Delete</a>
+              <a href="{% url 'update-receipe' receipe.id %}" class="btn btn-success btn-sm">Update</a>
             </td>
           </tr>
           {% endfor %}
