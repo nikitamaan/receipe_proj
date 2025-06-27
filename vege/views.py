@@ -55,3 +55,5 @@ def delete_receipe(request,id):
     return redirect('/receipes/')
 
     
+    
+
